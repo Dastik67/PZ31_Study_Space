@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Сохранение заметки в localStorage и имени в cookies" />
+    <title>Study Space — мои данные</title>
+    <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="./js/script.js" defer></script>
+  </head>
+  <body>
+    <main class="workspace">
+      <header class="welcome">
+        <h1 id="greeting">Привет, студент!</h1>
+        <p>Сохраните данные и обновите страницу, чтобы проверить результат.</p>
+      </header>
+
+      <section class="panel" aria-labelledby="profile-title">
+        <div class="panel__top">
+          <div class="panel__icon panel__icon--purple" aria-hidden="true">👤</div>
+          <div>
+            <h2 id="profile-title">Имя пользователя</h2>
+            <p class="panel__subtitle">Сохраняется в cookie</p>
+          </div>
+        </div>
+        <label class="field-label" for="name-input">Как к вам обращаться?</label>
+        <div class="form-row">
+          <input
+            class="text-input"
+            id="name-input"
+            type="text"
+            maxlength="40"
+            placeholder="Например, Анна"
+            autocomplete="off"
+          />
+          <button class="button button--purple" id="save-name" type="button">
+            Запомнить имя
+          </button>
+        </div>
+        <p class="status" id="name-status" role="status" aria-live="polite">
+          Имя пока не сохранено.
+        </p>
+      </section>
+
+      <section class="panel" aria-labelledby="note-title">
+        <div class="panel__top">
+          <div class="panel__icon panel__icon--mint" aria-hidden="true">✎</div>
+          <div>
+            <h2 id="note-title">Моя заметка</h2>
+            <p class="panel__subtitle">Сохраняется в localStorage</p>
+          </div>
+        </div>
+        <label class="field-label" for="note-input">Напишите, что нужно запомнить</label>
+        <textarea
+          class="text-input note-input"
+          id="note-input"
+          rows="5"
+          placeholder="Например, повторить тему урока"
+        ></textarea>
+        <div class="actions">
+          <button class="button button--dark" id="save-note" type="button">
+            Сохранить заметку
+          </button>
+          <button class="button button--outline" id="clear-note" type="button">
+            Удалить заметку
+          </button>
+        </div>
+        <p class="status" id="note-status" role="status" aria-live="polite">
+          Заметка пока не сохранена.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
